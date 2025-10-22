@@ -12,67 +12,79 @@
             --accent: #111827;
         }
 
+        /* Reset y tipografía */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         html, body { background: var(--bg); color: var(--text); }
-
         body {
             font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-            line-height: 1.55;
+            line-height: 1.5;
+            font-size: 15px;
         }
 
         .page { max-width: 960px; margin: 0 auto; padding: 48px 28px; }
 
         /* Header */
-        .header { border-bottom: 1px solid var(--border); padding-bottom: 22px; margin-bottom: 28px; }
-        .name { font-size: 34px; font-weight: 700; letter-spacing: 0.2px; }
-        .subtitle { margin-top: 6px; color: var(--muted); font-weight: 500; }
-        .contact { margin-top: 10px; color: var(--muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 12px; }
+        .header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 25px; }
+        .name { font-size: 38px; font-weight: 800; letter-spacing: -0.5px; line-height: 1; }
+        /* Título de CV más neutral y basado en la experiencia, no en el título formal */
+        .subtitle { margin-top: 4px; color: var(--muted); font-weight: 500; font-size: 18px; }
+        .contact { margin-top: 10px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 16px; }
+        .contact a { color: var(--muted); text-decoration: none; }
         .contact .sep { opacity: .45; }
 
         /* Layout */
-        .grid { display: grid; grid-template-columns: 310px 1fr; gap: 36px; }
-        .sidebar { }
-        .main { }
+        .grid { display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
 
         /* Sections */
-        .section { margin-bottom: 26px; }
-        .section-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 12px; font-weight: 700; }
-        .muted { color: var(--muted); }
+        .section { margin-bottom: 25px; }
+        .section-title { 
+            font-size: 14px; 
+            text-transform: uppercase; 
+            letter-spacing: 0.16em; 
+            color: var(--accent); 
+            margin-bottom: 12px; 
+            font-weight: 700; 
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+        /* Corregido el perfil para evitar el uso de 'Profesional' */
+        .muted { color: var(--muted); font-size: 14px;}
         .hr { height: 1px; background: var(--border); margin: 18px 0; }
 
-        /* Lists */
-        .list { list-style: none; display: grid; gap: 8px; }
-        .kv { display: grid; grid-template-columns: 120px 1fr; gap: 10px; font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        /* Lists y Data */
+        .list { list-style: none; display: grid; gap: 6px; }
+        .kv { display: grid; grid-template-columns: 110px 1fr; gap: 10px; font-size: 14px; padding: 4px 0; border-bottom: none; }
         .kv .k { color: var(--muted); font-weight: 600; }
         .kv .v { color: var(--text); }
 
-        /* Chips */
-        .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-        .chip { display: inline-block; padding: 6px 10px; border: 1px solid var(--border); border-radius: 999px; font-size: 13px; color: var(--accent); background: #fafafa; }
-        .skill { margin-bottom: 14px; }
-        .skill h4 { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        /* Chips / Skills */
+        .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+        .chip { display: inline-block; padding: 5px 9px; border: 1px solid var(--border); border-radius: 4px; font-size: 13px; color: var(--accent); background: #f8f8f8; font-weight: 600; }
+        .skill { margin-bottom: 18px; }
+        .skill h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
         .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
 
         /* Experience */
-        .job { padding: 14px 0; border-bottom: 1px solid var(--border); }
+        .job { padding: 10px 0; border-bottom: 1px solid var(--border); }
         .job:last-child { border-bottom: none; }
-        .job-head { display: flex; justify-content: space-between; gap: 10px; align-items: first baseline; }
-        .job h3 { font-size: 16px; font-weight: 700; }
-        .job .meta { color: var(--muted); font-size: 14px; }
-        .job .when { font-size: 13px; color: var(--accent); font-weight: 600; white-space: nowrap; }
-        .bullets { margin-top: 8px; display: grid; gap: 6px; font-size: 14px; color: #1f2937; }
+        .job-head { display: flex; justify-content: space-between; gap: 15px; align-items: flex-start; margin-bottom: 4px; }
+        .job h3 { font-size: 17px; font-weight: 700; line-height: 1.2; }
+        .job .meta { color: var(--muted); font-size: 14px; margin-top: 2px; font-style: italic; }
+        .job .when { font-size: 13px; color: var(--text); font-weight: 600; white-space: nowrap; line-height: 1.2;}
+        .bullets { margin-top: 8px; margin-left: 20px; list-style-type: disc; display: grid; gap: 4px; font-size: 15px; color: #1f2937; }
+        .bullets div { list-style: inherit; }
 
         /* Education */
-        .edu { padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .edu { padding: 8px 0; border-bottom: 1px solid var(--border); }
         .edu:last-child { border-bottom: none; }
-        .edu h4 { font-size: 15px; font-weight: 700; }
+        .edu h4 { font-size: 16px; font-weight: 700; }
         .edu .meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
 
         /* Print */
         @media print {
             .page { padding: 0 12mm; }
             .header { margin-bottom: 16px; padding-bottom: 12px; }
+            .grid { gap: 20px; }
         }
 
         @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
@@ -82,13 +94,11 @@
     <div class="page">
         <header class="header">
             <h1 class="name">Emmanuel Ponce</h1>
-            <div class="subtitle">Full Stack Developer · Especialista en Infraestructura TI</div>
+            <div class="subtitle">Desarrollador Full Stack · Analista de Sistemas e Infraestructura TI</div>
             <div class="contact">
-                <span>ing.emmanuel.ponce@icloud.com</span>
+                <a href="mailto:ing.emmanuel.ponce@icloud.com">ing.emmanuel.ponce@icloud.com</a>
                 <span class="sep">•</span>
                 <span>+591 76823858</span>
-                <span class="sep">•</span>
-                <span>+591 73650434</span>
                 <span class="sep">•</span>
                 <span>Santa Cruz de la Sierra, Bolivia</span>
             </div>
@@ -98,114 +108,79 @@
             <aside class="sidebar">
                 <section class="section">
                     <h2 class="section-title">Perfil</h2>
-                    <div class="muted" style="font-size:14px;">
-                        Experiencia en desarrollo Full Stack, soporte técnico y gestión de infraestructura TI. Participación en aplicaciones web escalables (frontend y backend) con foco en eficiencia operativa y optimización de sistemas empresariales.
+                    <div class="muted">
+                        Cuento con una combinación de experiencia en desarrollo **Full Stack**, análisis de sistemas **ERP (SAP B1, Orange)**, gestión de **infraestructura TI** y soporte técnico. Enfocado en la **implementación de ETL** para la calidad de datos y la **optimización de sistemas empresariales** (ViCom), buscando eficiencia operativa y escalabilidad.
                     </div>
                 </section>
 
                 <section class="section">
-                    <h2 class="section-title">Datos</h2>
-                    <div class="kv"><div class="k">Estado civil</div><div class="v">Soltero</div></div>
-                    <div class="kv"><div class="k">Licencia</div><div class="v">Particular (P)</div></div>
-                    <div class="kv"><div class="k">Disponibilidad</div><div class="v">Tiempo completo</div></div>
-                    <div class="kv"><div class="k">Categoría</div><div class="v">Informática · Ingeniería</div></div>
-                </section>
-
-                <section class="section">
-                    <h2 class="section-title">Habilidades</h2>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
 
                     <div class="skill">
-                        <h4>Frontend</h4>
+                        <h4>Soporte / Infraestructura (Avanzado)</h4>
                         <div class="chips">
-                            <span class="chip">HTML</span>
-                            <span class="chip">CSS</span>
-                            <span class="chip">JavaScript</span>
-                            <span class="chip">C#</span>
-                            <span class="chip">.NET</span>
-                        </div>
-                        <div class="note">Nivel: Medio</div>
-                    </div>
-
-                    <div class="skill">
-                        <h4>Backend</h4>
-                        <div class="chips">
-                            <span class="chip">Node.js</span>
-                        </div>
-                        <div class="note">Nivel: Medio</div>
-                    </div>
-
-                    <div class="skill">
-                        <h4>Bases de datos</h4>
-                        <div class="chips">
-                            <span class="chip">SQL</span>
-                            <span class="chip">Modelado</span>
-                            <span class="chip">Consultas</span>
-                            <span class="chip">Reportes</span>
-                        </div>
-                        <div class="note">Nivel: Medio</div>
-                    </div>
-
-                    <div class="skill">
-                        <h4>Desarrollo Web</h4>
-                        <div class="chips">
-                            <span class="chip">Arquitecturas modulares</span>
-                            <span class="chip">Escalabilidad</span>
-                            <span class="chip">Responsive UI</span>
-                        </div>
-                        <div class="note">Nivel: Medio</div>
-                    </div>
-
-                    <div class="skill">
-                        <h4>Soporte / Infraestructura</h4>
-                        <div class="chips">
-                            <span class="chip">Diagnóstico</span>
-                            <span class="chip">Mantenimiento</span>
-                            <span class="chip">Redes</span>
+                            <span class="chip">Diagnóstico y Mantenimiento</span>
+                            <span class="chip">Redes / VPN</span>
                             <span class="chip">Virtualización</span>
-                            <span class="chip">Docker (operativo)</span>
+                            <span class="chip">Docker (Operativo)</span>
                         </div>
-                        <div class="note">Nivel: Avanzado</div>
+                    </div>
+                    
+                    <div class="skill">
+                        <h4>Sistemas Empresariales (Avanzado)</h4>
+                        <div class="chips">
+                            <span class="chip">SAP Business One (B1)</span>
+                            <span class="chip">ERP Orange</span>
+                            <span class="chip">Sistema ViCom</span>
+                            <span class="chip">Análisis Funcional</span>
+                        </div>
                     </div>
 
                     <div class="skill">
-                        <h4>Automatización / Datos</h4>
+                        <h4>Bases de Datos (Medio - Avanzado)</h4>
                         <div class="chips">
+                            <span class="chip">SQL Server</span>
+                            <span class="chip">PostgreSQL</span>
+                            <span class="chip">Modelado</span>
+                            <span class="chip">Consultas complejas</span>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <h4>Automatización / Data (Avanzado)</h4>
+                        <div class="chips">
+                            <span class="chip">Implementación ETL</span>
                             <span class="chip">Power BI</span>
                             <span class="chip">Power Query</span>
-                            <span class="chip">Power Pivot</span>
+                            <span class="chip">Transformación de Datos</span>
                         </div>
-                        <div class="note">Nivel: Intermedio–Avanzado</div>
                     </div>
 
                     <div class="skill">
-                        <h4>Análisis / Data</h4>
+                        <h4>Desarrollo Frontend / Backend (Medio)</h4>
                         <div class="chips">
-                            <span class="chip">Fundamentos estadísticos</span>
-                            <span class="chip">Transformación</span>
-                            <span class="chip">Limpieza de datos</span>
-                            <span class="chip">Manejo de datasets</span>
+                            <span class="chip">C# / .NET</span>
+                            <span class="chip">Node.js</span>
+                            <span class="chip">JavaScript/HTML/CSS</span>
+                            <span class="chip">Arquitecturas modulares</span>
                         </div>
-                        <div class="note">Nivel: Medio</div>
                     </div>
 
                     <div class="skill">
-                        <h4>Herramientas</h4>
+                        <h4>Metodologías (Avanzado)</h4>
                         <div class="chips">
-                            <span class="chip">Microsoft Access (básico)</span>
-                            <span class="chip">Entornos Docker</span>
-                        </div>
-                        <div class="note">Nivel: Medio</div>
-                    </div>
-
-                    <div class="skill">
-                        <h4>Metodologías</h4>
-                        <div class="chips">
-                            <span class="chip">Seguridad en implementación</span>
+                            <span class="chip">Seguridad en Implementación</span>
                             <span class="chip">Documentación técnica</span>
                             <span class="chip">Trazabilidad</span>
                         </div>
-                        <div class="note">Nivel: Avanzado</div>
                     </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Datos Adicionales</h2>
+                    <div class="kv"><div class="k">Estado civil</div><div class="v">Soltero</div></div>
+                    <div class="kv"><div class="k">Licencia</div><div class="v">Particular (P)</div></div>
+                    <div class="kv"><div class="k">Disponibilidad</div><div class="v">Tiempo completo</div></div>
                 </section>
 
                 <section class="section">
@@ -217,22 +192,23 @@
 
             <main class="main">
                 <section class="section">
-                    <h2 class="section-title">Experiencia</h2>
+                    <h2 class="section-title">Experiencia Profesional</h2>
 
                     <article class="job">
                         <div class="job-head">
                             <div>
-                                <h3>Soporte de Sistema</h3>
+                                <h3>Analista de Sistemas, ERP y Plataforma TI</h3>
                                 <div class="meta">Algortimos srl — Santa Cruz de la Sierra</div>
                             </div>
                             <div class="when">Sep 2024 — Presente</div>
                         </div>
-                        <div class="bullets">
-                            <div>Gestión y resolución de incidencias en servidores físicos y virtuales con foco en continuidad operativa.</div>
-                            <div>Monitoreo de infraestructura crítica (servicios distribuidos, entornos Docker).</div>
-                            <div>Automatización de tareas repetitivas con herramientas gratuitas para reducir tiempos de respuesta.</div>
-                            <div>Elaboración de informes técnicos claros para equipos operativos y gerenciales.</div>
-                        </div>
+                        <ul class="bullets">
+                            <li>Lideré el análisis, desarrollo y soporte del **sistema empresarial ViCom**, asegurando su correcta operatividad y evolución.</li>
+                            <li>Responsable de la administración y mantenimiento de bases de datos **SQL Server y PostgreSQL**, incluyendo la optimización de consultas y la generación de reportes gerenciales.</li>
+                            <li>Implementación de procesos **ETL** para la limpieza y transformación de datos, mejorando la calidad de la información para el análisis con Power BI.</li>
+                            <li>Gestión y soporte funcional y técnico de módulos de **SAP Business One (SAP B1)** y **ERP Orange**, resolviendo incidencias críticas y mejorando flujos de trabajo.</li>
+                            <li>Monitoreo constante de la **infraestructura crítica** (servidores, entornos Docker, red) para garantizar la continuidad operativa.</li>
+                        </ul>
                     </article>
 
                     <article class="job">
@@ -243,12 +219,11 @@
                             </div>
                             <div class="when">Ene 2024 — Sep 2024</div>
                         </div>
-                        <div class="bullets">
-                            <div>Resolución de incidencias de hardware, software y redes.</div>
-                            <div>Soporte presencial y remoto a usuarios internos.</div>
-                            <div>Instalación, configuración y mantenimiento preventivo de equipos.</div>
-                            <div>Gestión de tickets y capacitación básica a usuarios finales.</div>
-                        </div>
+                        <ul class="bullets">
+                            <li>Resolución eficiente de incidencias de hardware, software y redes a nivel interno.</li>
+                            <li>Instalación, configuración y mantenimiento preventivo de equipos, garantizando la disponibilidad de recursos de usuario.</li>
+                            <li>Soporte presencial y remoto, con gestión de tickets y capacitación básica a usuarios finales.</li>
+                        </ul>
                     </article>
 
                     <article class="job">
@@ -259,11 +234,11 @@
                             </div>
                             <div class="when">Ene 2019 — Nov 2023</div>
                         </div>
-                        <div class="bullets">
-                            <div>Implementación y soporte de soluciones técnicas en proyectos audiovisuales y digitales.</div>
-                            <div>Coordinación con equipos multiárea para entregas dentro de estándares y plazos.</div>
-                            <div>Soporte en desarrollo de sistemas internos y mejora operativa.</div>
-                        </div>
+                        <ul class="bullets">
+                            <li>Implementación y soporte de soluciones técnicas en proyectos audiovisuales y digitales.</li>
+                            <li>Coordinación exitosa con equipos multiárea para garantizar entregas dentro de altos estándares de calidad y plazos definidos.</li>
+                            <li>Soporte y participación en el desarrollo de sistemas internos y en iniciativas de mejora operativa.</li>
+                        </ul>
                     </article>
 
                     <article class="job">
@@ -274,30 +249,30 @@
                             </div>
                             <div class="when">Ago 2016 — Ago 2018</div>
                         </div>
-                        <div class="bullets">
-                            <div>Instalación y mantenimiento de CCTV, alarmas y soluciones electrónicas.</div>
-                            <div>Configuración de redes entre sucursales (equipamiento Ubiquiti).</div>
-                            <div>Soporte técnico y formación a usuarios finales.</div>
-                        </div>
+                        <ul class="bullets">
+                            <li>Instalación y mantenimiento de sistemas de seguridad electrónica (CCTV, alarmas).</li>
+                            <li>Configuración de redes empresariales entre sucursales utilizando equipamiento Ubiquiti.</li>
+                            <li>Provisión de soporte técnico de primer nivel y formación a usuarios finales.</li>
+                        </ul>
                     </article>
                 </section>
 
                 <section class="section">
-                    <h2 class="section-title">Educación</h2>
+                    <h2 class="section-title">Formación Académica</h2>
 
                     <div class="edu">
                         <h4>Especialización en Data Analytics (Programa conjunto)</h4>
-                        <div class="meta">Universidad Privada Peruano Alemana / San Ignacio University / NAO x Tecmilenio (NETZUM) — Ene 2024 — Dic 2024 — Santa Cruz de la Sierra</div>
+                        <div class="meta">Universidad Privada Peruano Alemana / San Ignacio University / NAO x Tecmilenio (NETZUM) — Ene 2024 — Dic 2024</div>
                     </div>
 
                     <div class="edu">
                         <h4>Ingeniería de Sistemas (Licenciatura) — En curso</h4>
-                        <div class="meta">Universidad Privada Domingo Savio — Ene 2021 — Presente — Santa Cruz de la Sierra</div>
+                        <div class="meta">Universidad Privada Domingo Savio — Ene 2021 — Presente</div>
                     </div>
 
                     <div class="edu">
                         <h4>Técnico Superior en Sistemas</h4>
-                        <div class="meta">Universidad Privada Domingo Savio — Dic 2013 — Dic 2016 — Santa Cruz de la Sierra</div>
+                        <div class="meta">Universidad Privada Domingo Savio — Dic 2013 — Dic 2016</div>
                     </div>
 
                     <div class="edu">
@@ -309,4 +284,3 @@
         </div>
     </div>
 </body>
-
