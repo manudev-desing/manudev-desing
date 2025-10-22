@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="CV de Emmanuel Ponce — Full Stack Developer e Infraestructura TI" />
+    <meta name="description" content="CV de Emmanuel Ponce — Analista de Sistemas y Mesa de Ayuda" />
     <title>CV — Emmanuel Ponce</title>
     <style>
         :root {
@@ -14,11 +14,12 @@
 
         /* Reset y tipografía */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { background: var(--bg); color: var(--text); }
         body {
             font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
             line-height: 1.5;
             font-size: 15px;
+            background: var(--bg); 
+            color: var(--text);
         }
 
         .page { max-width: 960px; margin: 0 auto; padding: 48px 28px; }
@@ -26,7 +27,7 @@
         /* Header */
         .header { border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 25px; }
         .name { font-size: 38px; font-weight: 800; letter-spacing: -0.5px; line-height: 1; }
-        /* Título de CV más neutral y basado en la experiencia, no en el título formal */
+        /* Título del CV actualizado */
         .subtitle { margin-top: 4px; color: var(--muted); font-weight: 500; font-size: 18px; }
         .contact { margin-top: 10px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 16px; }
         .contact a { color: var(--muted); text-decoration: none; }
@@ -47,7 +48,6 @@
             border-bottom: 1px solid var(--border);
             padding-bottom: 4px;
         }
-        /* Corregido el perfil para evitar el uso de 'Profesional' */
         .muted { color: var(--muted); font-size: 14px;}
         .hr { height: 1px; background: var(--border); margin: 18px 0; }
 
@@ -80,21 +80,47 @@
         .edu h4 { font-size: 16px; font-weight: 700; }
         .edu .meta { color: var(--muted); font-size: 14px; margin-top: 2px; }
 
-        /* Print */
+        /* Botón de Impresión */
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+            background-color: var(--accent);
+            color: white;
+            transition: background-color 0.2s;
+            z-index: 100;
+        }
+
+        .print-button:hover {
+            background-color: #0c121d;
+        }
+
+        /* Ocultar el botón al imprimir */
         @media print {
             .page { padding: 0 12mm; }
             .header { margin-bottom: 16px; padding-bottom: 12px; }
             .grid { gap: 20px; }
+            .print-button {
+                display: none;
+            }
         }
 
         @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
+    <button class="print-button" onclick="window.print()">Imprimir CV</button>
+
     <div class="page">
         <header class="header">
             <h1 class="name">Emmanuel Ponce</h1>
-            <div class="subtitle">Desarrollador Full Stack · Analista de Sistemas e Infraestructura TI</div>
+            <div class="subtitle">Analista de Sistemas e Infraestructura TI · Mesa de Ayuda</div>
             <div class="contact">
                 <a href="mailto:ing.emmanuel.ponce@icloud.com">ing.emmanuel.ponce@icloud.com</a>
                 <span class="sep">•</span>
@@ -109,7 +135,7 @@
                 <section class="section">
                     <h2 class="section-title">Perfil</h2>
                     <div class="muted">
-                        Cuento con una combinación de experiencia en desarrollo **Full Stack**, análisis de sistemas **ERP (SAP B1, Orange)**, gestión de **infraestructura TI** y soporte técnico. Enfocado en la **implementación de ETL** para la calidad de datos y la **optimización de sistemas empresariales** (ViCom), buscando eficiencia operativa y escalabilidad.
+                        Cuento con una combinación de experiencia en desarrollo <strong>Full Stack</strong>, análisis de sistemas <strong>ERP (SAP B1, Orange)</strong>, gestión de <strong>infraestructura TI</strong> y soporte técnico. Enfocado en la <strong>implementación de ETL</strong> para la calidad de datos y la <strong>optimización de sistemas empresariales</strong> (ViCom), buscando eficiencia operativa y escalabilidad.
                     </div>
                 </section>
 
@@ -152,6 +178,7 @@
                             <span class="chip">Implementación ETL</span>
                             <span class="chip">Power BI</span>
                             <span class="chip">Power Query</span>
+                            <span class="chip">Power Pivot</span>
                             <span class="chip">Transformación de Datos</span>
                         </div>
                     </div>
@@ -163,15 +190,18 @@
                             <span class="chip">Node.js</span>
                             <span class="chip">JavaScript/HTML/CSS</span>
                             <span class="chip">Arquitecturas modulares</span>
+                            <span class="chip">Blazor WASM</span>
+                            <span class="chip">.NET Core 9</span>
                         </div>
                     </div>
 
                     <div class="skill">
                         <h4>Metodologías (Avanzado)</h4>
                         <div class="chips">
-                            <span class="chip">Seguridad en Implementación</span>
-                            <span class="chip">Documentación técnica</span>
+                            <span class="chip">Gestión de Incidentes</span>
                             <span class="chip">Trazabilidad</span>
+                            <span class="chip">Documentación técnica</span>
+                            <span class="chip">Seguridad en Implementación</span>
                         </div>
                     </div>
                 </section>
@@ -180,6 +210,7 @@
                     <h2 class="section-title">Datos Adicionales</h2>
                     <div class="kv"><div class="k">Estado civil</div><div class="v">Soltero</div></div>
                     <div class="kv"><div class="k">Licencia</div><div class="v">Particular (P)</div></div>
+                    <div class="kv"><div class="k">Pretensión Salarial</div><div class="v">Bs. 5.155</div></div>
                     <div class="kv"><div class="k">Disponibilidad</div><div class="v">Tiempo completo</div></div>
                 </section>
 
@@ -197,17 +228,34 @@
                     <article class="job">
                         <div class="job-head">
                             <div>
-                                <h3>Analista de Sistemas, ERP y Plataforma TI</h3>
-                                <div class="meta">Algortimos srl — Santa Cruz de la Sierra</div>
+                                <h3>Analista de Tecnología y Servicios</h3>
+                                <div class="meta">Urubo Village — Santa Cruz de la Sierra</div>
+                            </div>
+                            <div class="when">Oct 2025 — Presente</div>
+                        </div>
+                        <ul class="bullets">
+                            <li>Lideré el análisis, desarrollo y soporte del sistema empresarial <strong>ViCom</strong>, asegurando su correcta operatividad y evolución.</li>
+                            <li>Responsable de la administración y mantenimiento de bases de datos <strong>SQL Server y PostgreSQL</strong>, incluyendo la optimización de consultas y la generación de reportes gerenciales.</li>
+                            <li>Implementación de procesos <strong>ETL</strong> para la limpieza y transformación de datos, mejorando la calidad de la información para el análisis con Power BI.</li>
+                            <li>Gestión y soporte funcional y técnico de módulos de <strong>SAP Business One (SAP B1)</strong> y <strong>ERP Orange</strong>, resolviendo incidencias críticas y mejorando flujos de trabajo.</li>
+                            <li>Monitoreo constante de la <strong>infraestructura crítica</strong> (servidores, entornos Docker, red) para garantizar la continuidad operativa.</li>
+                        </ul>
+                    </article>
+
+                    <article class="job">
+                        <div class="job-head">
+                            <div>
+                                <h3>Mesa de Ayuda y Soporte de Infraestructura TI</h3>
+                                <div class="meta">Algortimos srl (Proyecto Embol S.A.) — Santa Cruz de la Sierra</div>
                             </div>
                             <div class="when">Sep 2024 — Presente</div>
                         </div>
                         <ul class="bullets">
-                            <li>Lideré el análisis, desarrollo y soporte del **sistema empresarial ViCom**, asegurando su correcta operatividad y evolución.</li>
-                            <li>Responsable de la administración y mantenimiento de bases de datos **SQL Server y PostgreSQL**, incluyendo la optimización de consultas y la generación de reportes gerenciales.</li>
-                            <li>Implementación de procesos **ETL** para la limpieza y transformación de datos, mejorando la calidad de la información para el análisis con Power BI.</li>
-                            <li>Gestión y soporte funcional y técnico de módulos de **SAP Business One (SAP B1)** y **ERP Orange**, resolviendo incidencias críticas y mejorando flujos de trabajo.</li>
-                            <li>Monitoreo constante de la **infraestructura crítica** (servidores, entornos Docker, red) para garantizar la continuidad operativa.</li>
+                            <li>Mesa de Ayuda y Gestión de Incidentes: Punto de contacto central para usuarios, priorizando la resolución de fallas de software/hardware y asegurando la <strong>trazabilidad</strong> completa de cada solicitud (End-to-End).</li>
+                            <li>Desarrollo integral del sistema corporativo de gestión de activos Titan, un proyecto de misión crítica para <strong>Embol S.A.</strong>. El sistema fue construido utilizando <strong>Blazor WASM</strong> (Frontend) y <strong>.NET Core 9</strong> (Backend).</li>
+                            <li>Gestión y resolución de incidencias en servidores físicos y virtuales con enfoque en <strong>continuidad operativa</strong>.</li>
+                            <li>Monitoreo de <strong>infraestructura crítica</strong> (servicios distribuidos, entornos Docker).</li>
+                            <li><strong>Automatización de tareas repetitivas</strong> con herramientas gratuitas para reducir tiempos de respuesta.</li>
                         </ul>
                     </article>
 
@@ -215,29 +263,30 @@
                         <div class="job-head">
                             <div>
                                 <h3>HelpDesk Support</h3>
-                                <div class="meta">SOLINTEC S.R.L. — Santa Cruz de la Sierra</div>
+                                <div class="meta">SOLINTEC S.R.L. Soluciones Integrales de Tecnología — Santa Cruz de la Sierra</div>
                             </div>
                             <div class="when">Ene 2024 — Sep 2024</div>
                         </div>
                         <ul class="bullets">
-                            <li>Resolución eficiente de incidencias de hardware, software y redes a nivel interno.</li>
-                            <li>Instalación, configuración y mantenimiento preventivo de equipos, garantizando la disponibilidad de recursos de usuario.</li>
-                            <li>Soporte presencial y remoto, con gestión de tickets y capacitación básica a usuarios finales.</li>
+                            <li>Resolución eficiente de incidencias de hardware, software y redes.</li>
+                            <li>Soporte presencial y remoto a usuarios internos.</li>
+                            <li>Instalación, configuración y mantenimiento preventivo de equipos.</li>
+                            <li>Gestión de tickets y capacitación básica a usuarios finales.</li>
                         </ul>
                     </article>
 
                     <article class="job">
                         <div class="job-head">
                             <div>
-                                <h3>Encargado de TI y Calidad de Transmisión</h3>
+                                <h3>Encargado de Tecnologías de la Información y Calidad de Transmisión</h3>
                                 <div class="meta">CIFEPAV Consulting Group — Santa Cruz de la Sierra</div>
                             </div>
                             <div class="when">Ene 2019 — Nov 2023</div>
                         </div>
                         <ul class="bullets">
                             <li>Implementación y soporte de soluciones técnicas en proyectos audiovisuales y digitales.</li>
-                            <li>Coordinación exitosa con equipos multiárea para garantizar entregas dentro de altos estándares de calidad y plazos definidos.</li>
-                            <li>Soporte y participación en el desarrollo de sistemas internos y en iniciativas de mejora operativa.</li>
+                            <li>Coordinación con equipos multiárea para entregas dentro de estándares y plazos.</li>
+                            <li>Soporte en desarrollo de sistemas internos y mejora operativa.</li>
                         </ul>
                     </article>
 
@@ -250,8 +299,8 @@
                             <div class="when">Ago 2016 — Ago 2018</div>
                         </div>
                         <ul class="bullets">
-                            <li>Instalación y mantenimiento de sistemas de seguridad electrónica (CCTV, alarmas).</li>
-                            <li>Configuración de redes empresariales entre sucursales utilizando equipamiento Ubiquiti.</li>
+                            <li>Instalación y mantenimiento de CCTV, alarmas y soluciones electrónicas.</li>
+                            <li>Configuración de redes entre sucursales (equipamiento Ubiquiti).</li>
                             <li>Provisión de soporte técnico de primer nivel y formación a usuarios finales.</li>
                         </ul>
                     </article>
@@ -262,22 +311,22 @@
 
                     <div class="edu">
                         <h4>Especialización en Data Analytics (Programa conjunto)</h4>
-                        <div class="meta">Universidad Privada Peruano Alemana / San Ignacio University / NAO x Tecmilenio (NETZUM) — Ene 2024 — Dic 2024</div>
+                        <div class="meta">Universidad Privada Peruano Alemana / San Ignacio University / NAO x Tecmilenio (NETZUM) Ene 2024 Dic 2024</div>
                     </div>
 
                     <div class="edu">
-                        <h4>Ingeniería de Sistemas (Licenciatura) — En curso</h4>
-                        <div class="meta">Universidad Privada Domingo Savio — Ene 2021 — Presente</div>
+                        <h4>Ingeniería de Sistemas (Licenciatura) Presente</h4>
+                        <div class="meta">Universidad Privada Domingo Savio Ene 2021 Presente</div>
                     </div>
 
                     <div class="edu">
                         <h4>Técnico Superior en Sistemas</h4>
-                        <div class="meta">Universidad Privada Domingo Savio — Dic 2013 — Dic 2016</div>
+                        <div class="meta">Universidad Privada Domingo Savio Dic 2013 Dic 2016</div>
                     </div>
 
                     <div class="edu">
                         <h4>Bachiller en Humanidades</h4>
-                        <div class="meta">Sagrado Corazón de Jesús — Feb 2001 — Dic 2013 — Yacuiba</div>
+                        <div class="meta">Sagrado Corazón de Jesús Feb 2001 Dic 2013 Yacuiba</div>
                     </div>
                 </section>
             </main>
